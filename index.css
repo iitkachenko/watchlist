@@ -1,0 +1,268 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+input, button {
+    font-family: 'Inter', sans-serif;    
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+a:hover {
+    color: orange;
+}
+
+.container {
+    margin: 0 10%;
+}
+
+header {
+    background: url('https://images.unsplash.com/photo-1628432136678-43ff9be34064?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=363&q=80') 50% 20% no-repeat;
+    background-color: #121212;    
+    background-blend-mode: soft-light;
+    background-size: cover;
+    color: #fff;
+    padding: 5em 0;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2.625rem;
+}
+
+nav a {
+    font-size: 0.875rem; 
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;   
+}
+
+form {
+    display: flex;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    justify-content: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(-50%);
+}
+
+#search, #search-btn {
+    border: none;
+    flex-grow: 1;
+    font-weight: 500;
+    font-size: 0.875rem;
+    /* letter-spacing: 1px; */
+}
+
+#search {
+    padding: .8em 1.5em .8em 1em;    
+    border-radius: 6px 0 0 6px;
+    background: #2E2E2F;
+    color: #A5A5A5;
+}
+
+#search:hover, #search:focus  {
+    background: #eee;
+    color: #2E2E2F;
+}
+
+#search-btn {
+    background: #4B4B4B;
+    color: #fff;
+    border-radius: 0 6px 6px 0;  
+}
+
+#search-btn:hover {
+    background: orange;  
+    color: #000;
+}
+
+main {
+    padding: 3em 0;
+    flex-grow: 1;
+    background: #121212;
+    color: #787878;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-placeholder {
+    padding-top: 80px;
+    background: url('./images/movie-placeholder.png') 50% 0 no-repeat;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #2E2E2F;
+}
+
+.card {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+}
+
+/* #watchlist .card {
+    border-color: #fff;
+} */
+
+.card:not(:last-of-type) {
+    border-bottom: 1.5px solid #2C2C2C;
+    padding-bottom: 2em;    
+    margin-bottom: 2em;
+}
+
+.poster {
+    max-width: 20%;
+    min-width: 100px;
+    object-fit: contain;
+}
+
+.card-info {
+    max-width: 60%;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.rating {
+    padding-left: 17px;
+    background: url('./images/star.png') 0 1px no-repeat;
+}
+
+.card-title, .card-detailes {
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+}
+
+.plot {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.show .plot {
+    display: block;
+}
+
+.add-btn, .remove-btn, .read-more-btn {
+    background: transparent;
+    color: #fff;
+    border: none; 
+    white-space: nowrap;
+    padding: 0;   
+}
+
+.add-btn:hover, .remove-btn:hover, .read-more-btn:hover {
+    color: #A5A5A5;
+}
+
+.add-btn::before, .remove-btn::before {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25em;
+    margin-right: .5em;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    
+}
+
+.add-btn::before {
+    content: '+';
+}
+
+.remove-btn::before {
+    content: '-';
+    position: relative;
+    line-height: 1.1em;
+}
+
+.add-btn:focus, .remove-btn:focus {
+    border: none;
+    outline: none;
+}
+
+.add-btn:hover::before, .remove-btn:hover::before {
+    background: orange;
+}
+    
+.add-btn:focus::before, .remove-btn:focus::before {
+    border: 1px solid orange;
+}
+
+.read-more-btn {
+    border-bottom: 1px solid;
+}
+
+.read-more-btn:hover {
+    border-color: orange;
+}
+
+.watchlist-placeholder {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.watchlist-placeholder a {
+    display: inline-block;
+    margin-top: 1em;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+#message {
+    display: none;
+}
+
+#message.show {
+    display: block;  
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    padding: 2em 4em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #9999;
+    color: #fff;
+}
