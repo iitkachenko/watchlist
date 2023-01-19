@@ -45,7 +45,7 @@ async function searchMovies(searchingString) {
       return false;
   }
   
-  searchInput.value = '';
+//   searchInput.value = '';
           
   return moviesByTitle;
 }
